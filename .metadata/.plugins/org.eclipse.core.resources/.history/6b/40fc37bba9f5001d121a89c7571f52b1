@@ -1,0 +1,16 @@
+/*
+ * timer.c
+ *
+ *  Created on: May 18, 2023
+ *      Author: Doha
+ */
+
+#include "timer.h"
+#include "GPIO.h"
+#include<avr/io.h>
+
+void PWM_Timer0_Start(uint8 duty_cycle)
+{
+	TCCR0 |=(1<<WGM00)|(WGM01);
+	TCCR0 |=(TCCR0 & 0xF8)| prescaler_8;
+}

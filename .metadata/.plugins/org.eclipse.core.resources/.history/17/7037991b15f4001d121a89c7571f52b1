@@ -1,0 +1,36 @@
+/*
+ * main.c
+ *
+ *  Created on: May 3, 2023
+ *      Author: Doha
+ */
+
+#include "Lm35_sensor.h"
+#include "lcd.h"
+int main()
+{
+	ADC_ConfigType ADC_data;
+	ADC_data.prescaler=prescaler_8;
+	ADC_data.ref_volt=internal_voltage;
+
+	ADC_init(ADC_data);
+	LCD_init();
+	uint8 temp;
+	LCD_displayString("Temp=     C");
+	while(1)
+	{
+		temp=LM35_GetTemperature();
+		LCD_moveCursor(0,7);
+
+		if(temp>=100)
+		{
+			LCD_intgerToString(temp);
+
+		}else
+		{
+			LCD_intgerToString(temp);
+			LCD_displayCharacter(' ');
+		}
+
+	}
+}

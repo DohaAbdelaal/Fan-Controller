@@ -1,0 +1,17 @@
+/*
+ * motor.c
+ *
+ *  Created on: May 18, 2023
+ *      Author: Doha
+ */
+
+#include "motor.h"
+#include "GPIO.h"
+void DcMotor_Init(void)
+{
+	GPIO_setupPinDirection(PORTB_ID,)
+}
+ void DcMotor_Rotate(DcMotor_State state,uint8 speed)
+ {
+
+ }

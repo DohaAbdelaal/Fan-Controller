@@ -1,0 +1,25 @@
+/*
+ * adc.c
+ *
+ *  Created on: May 1, 2023
+ *      Author: Doha
+ */
+
+#include "adc.h"
+
+
+void ADC_init(const ADC_ConfigType *Config_Ptr)
+{
+	//ADMUX =0;//VCC supply
+	ADMUX |= (ADMUX  & 0x3F )|(Config_Ptr->ref_volt);
+	ADCSRA |=(1<<ADEN)|(1<<ADPS1)|(1<<ADPS0);//enable ADC & prescaler 8
+}
+uint16 ADC_readChannel(uint8 channel)
+{
+	ADMUX |=(ADMUX & 0xE0)| (channel & 0x07);	//insert channel value
+	SET_BIT(ADCSRA,ADSC); //start conversion
+	while(BIT_IS_CLEAR(ADCSRA,ADIF)){};//polling until conversion is Done and the flag is set
+	SET_BIT(ADCSRA,ADIF);//clear the flag
+	return ADC;
+}
+

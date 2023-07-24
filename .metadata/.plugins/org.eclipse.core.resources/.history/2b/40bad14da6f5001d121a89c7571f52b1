@@ -1,0 +1,18 @@
+/*
+ * timer.h
+ *
+ *  Created on: May 18, 2023
+ *      Author: Doha
+ */
+
+#ifndef TIMER_H_
+#define TIMER_H_
+
+typedef enum
+{
+	NO_CLOCK,No_prescaling,prescaler_8,prescaler_64,prescaler_256,prescaler_1024,
+	EXT_fall,EXT_ris
+}Timer_Prescaler;
+void PWM_Timer0_Start(uint8 duty_cycle);
+
+#endif /* TIMER_H_ */

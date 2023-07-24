@@ -1,0 +1,13 @@
+/*
+ * timer.c
+ *
+ *  Created on: May 18, 2023
+ *      Author: Doha
+ */
+
+#include "timer.h"
+
+void PWM_Timer0_Start(uint8 duty_cycle)
+{
+
+}
