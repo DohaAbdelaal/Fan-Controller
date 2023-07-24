@@ -24,3 +24,5 @@ d. If the temperature is greater than or equal 90C turn on the fan with 75% of i
 
 e. If the temperature is greater than or equal 120C turn on the fan with 100% of its maximum speed.
 *The LCD displays the temperature value and the fan state continuously*
+4-The DC-Motor rotates in clock-wise direction or stopped based on 
+the fan state.
